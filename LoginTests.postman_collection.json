@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "5ede1351-52d9-4ef0-ae9c-a732361134fb",
+		"name": "LoginTests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14931381"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"User param exists\", function () {\r",
+							"    pm.expect(pm.response.json().args.user).to.eql(\"admin\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?user=admin",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/get?user=admin",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	]
+}
